@@ -1,15 +1,15 @@
+
+;; (defun longer_than (x y)
+;;   (cond
+;;     ((eq x nil) nil)
+;;     ((eq y nil) t)
+;;     (t (longer_than (cdr x) (cdr y)))
+;;   )
+;; )
+
 (defun longer_than (x y)
-  (if (and (null x) (null y))
-    nil
-    (if (and (null x) y)
-      nil
-      (if (and x (null y))
-	t
-	(format t "~A.~%" (longer_than (cdr x) (cdr y)))
-	)
-      )
-    )
-  )
+  (> (length x) (length y))
+)
 
 (let
   ((x (read))
